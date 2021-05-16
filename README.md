@@ -4,12 +4,12 @@
 >cd ogit
 >ogit -install
 
-##Manual
+## Manual
 >ogit config
 >set username
 >set repositories
 
-####List repositories
+#### List repositories
 >ogit -l
 ####Add new repository
 >ogit -l add
