@@ -19,7 +19,7 @@ ogit -l
 ```
 ogit -l add
 ```
-##Use
+## Use
 ```
 ogit indexOfRepo baseBranch compareBranch
 ```
