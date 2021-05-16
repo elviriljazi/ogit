@@ -8,10 +8,9 @@
 #
 #---------------------------------------------
 
-manualpage()
-{
+manualpage() {
 
-cat << _MANUALPAGE
+  cat <<_MANUALPAGE
 
 ogit - opens URL in the user's preferred application
 
@@ -51,32 +50,31 @@ application.
 
 _MANUALPAGE
 }
-config(){
+config() {
 
-cat << _CONFIG
+  cat <<_CONFIG
 
 sudo ogit config - use root privileges to config this application
 
 
 _CONFIG
 }
-if [ "$1" = "-h" ] || [ "$1" = "--help" ]
-then
-manualpage
+if [ "$1" = "-h" ] || [ "$1" = "--help" ]; then
+  manualpage
 fi
 if [ "$1" = "config" ]; then
-if [ "$EUID" -ne 0 ]
-  then
+fi
+if [ "$EUID" -ne 0 ]; then
   echo "Please run as root"
   exit
 else
   read -p "Enter username: " username
   echo $username >/usr/bin/ogitfiles/userdetails
   read -p "Enter number of repos " reponr
-  printf '%b' '\0'>/usr/bin/ogitfiles/repo.lst
+  printf '%b' '\0' >/usr/bin/ogitfiles/repo.lst
   for i in $(seq 0 $(($reponr - 1))); do
     read -p "Enter repo $i : " repo
-  echo $repo>>/usr/bin/ogitfiles/repo.lst
+    echo $repo >>/usr/bin/ogitfiles/repo.lst
   done
 fi
 if [ "$1" = "-install" ]; then
@@ -91,20 +89,18 @@ if [ "$1" = "-l" ] || [ "$1" = "-list" ]; then
     n=$((n + 1))
   done </usr/bin/ogitfiles/repo.lst
 elif [ "$1" != "" ] && [ "$2" != "" ] && [ "$3" != "" ]; then
-n=0
-while read i; do
-if [ $n = $1 ]
-then
-repo=$i;
-fi
+  n=0
+  while read i; do
+    if [ $n = $1 ]; then
+      repo=$i
+    fi
     n=$((n + 1))
   done </usr/bin/ogitfiles/repo.lst
   n=0
-while read i; do
-if [ $n = "0" ]
-then
-user=$i;
-fi
+  while read i; do
+    if [ $n = "0" ]; then
+      user=$i
+    fi
     n=$((n + 1))
   done </usr/bin/ogitfiles/userdetails
   USER=$user
@@ -115,12 +111,11 @@ fi
 fi
 if [ "$1" = "-l" ] && [ "$2" = "add" ]; then
   read -p "Enter repo name: " re
-  echo $repo>>/usr/bin/ogitfiles/repo.lst
+  echo $repo >>/usr/bin/ogitfiles/repo.lst
 fi
 if [ "$1" = "-l" ] && [ "$2" = "rm" ] && [ "$3" != "" ]; then
   read -p "Enter repo name: " REPO
 fi
-if [ "$1" = "--version" ] || [ "$1" = "-V" ]
-then
-echo "v1.0"
+if [ "$1" = "--version" ] || [ "$1" = "-V" ]; then
+  echo "v1.0"
 fi
