@@ -17,7 +17,7 @@ ogit -l
 ```
 #### Add new repository
 ```
-ogit -l add
+sudo ogit -l add
 ```
 ## Use
 ```
