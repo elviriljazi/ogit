@@ -11,7 +11,7 @@
 
 #### List repositories
 >ogit -l
-####Add new repository
+#### Add new repository
 >ogit -l add
 ##
 >ogit indexOfRepo baseBranch compareBranch
