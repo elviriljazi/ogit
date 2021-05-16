@@ -1,24 +1,25 @@
 # ogit
+##Install
 ```
->git clone https://github.com/elviriljazi/ogit/
->cd ogit
->ogit -install
+git clone https://github.com/elviriljazi/ogit/
+cd ogit
+ogit -install
 ```
 ## Manual
 ```
->ogit config
->set username
->set repositories
+ogit config
+set username
+set repositories
 ```
 #### List repositories
 ```
->ogit -l
+ogit -l
 ```
 #### Add new repository
 ```
->ogit -l add
+ogit -l add
 ```
-##
+##Use
 ```
 ogit indexOfRepo baseBranch compareBranch
 ```
