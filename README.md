@@ -1,5 +1,5 @@
 # ogit
-##Install
+## Install
 ```
 git clone https://github.com/elviriljazi/ogit/
 cd ogit
