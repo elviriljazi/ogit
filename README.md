@@ -3,13 +3,13 @@
 ```
 git clone https://github.com/elviriljazi/ogit/
 cd ogit
-ogit -install
+sudo ogit -install
 ```
 ## Manual
 ```
-ogit config
-set username
-set repositories
+sudo ogit config
+>set username
+>set repositories
 ```
 #### List repositories
 ```
