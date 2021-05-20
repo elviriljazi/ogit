@@ -43,10 +43,6 @@ Shows the list and add new repository
 ogit 0 branch-1.0.0 branch-2.0.1
 Opens the GitHub URL that compare branches e.g. 'https://github.com/username/repository/compare/branch-1.0.0...branch-2.0.1'
 
-ogit /tmp/foobar.png
-
-Opens the PNG image file /tmp/foobar.png in the user's default image viewing
-application.
 
 _MANUALPAGE
 }
