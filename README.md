@@ -19,8 +19,9 @@ ogit -l
 sudo ogit -l add
 ```
 ## Use
+```
 ogit indexOfRepo baseBranch compareBranch
-
+```
 ```
 ogit      2        2.1.11      2.1.12
 ```
