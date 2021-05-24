@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 #---------------------------------------------
 #   ogit
 #
@@ -59,10 +59,9 @@ if [ "$1" = "-h" ] || [ "$1" = "--help" ]; then
   manualpage
 fi
 if [ "$1" = "config" ]; then
-fi
-if [ "$EUID" -ne 0 ]; then
-  echo "Please run as root"
-  exit
+if [[ $EUID -ne 0 ]]; then
+   echo "This script must be run as root" 
+   exit 1
 else
   read -p "Enter username: " username
   echo $username >/usr/bin/ogitfiles/userdetails
@@ -72,6 +71,7 @@ else
     read -p "Enter repo $i : " repo
     echo $repo >>/usr/bin/ogitfiles/repo.lst
   done
+fi
 fi
 if [ "$1" = "-install" ]; then
   chmod 755 ogit
@@ -106,8 +106,13 @@ elif [ "$1" != "" ] && [ "$2" != "" ] && [ "$3" != "" ]; then
   xdg-open "https://github.com/$USER/$REPO/compare/$BASE...$COMPARE"
 fi
 if [ "$1" = "-l" ] && [ "$2" = "add" ]; then
+if [[ $EUID -ne 0 ]]; then
+   echo "This script must be run as root" 
+   exit 1
+else
   read -p "Enter repo name: " re
   echo $repo >>/usr/bin/ogitfiles/repo.lst
+fi
 fi
 if [ "$1" = "-l" ] && [ "$2" = "rm" ] && [ "$3" != "" ]; then
   read -p "Enter repo name: " REPO
