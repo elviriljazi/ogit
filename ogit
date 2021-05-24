@@ -75,8 +75,9 @@ fi
 fi
 if [ "$1" = "-install" ]; then
   chmod 755 ogit
-  sudo cp ogit /usr/bin
+  sudo mv ogit /usr/bin
   sudo mkdir /usr/bin/ogitfiles/
+  echo "\nSuccessfully installed\n"
 fi
 if [ "$1" = "-l" ] || [ "$1" = "-list" ]; then
   n=0
