@@ -1,8 +1,7 @@
 # ogit
 ## Install
 ```
-git clone https://github.com/elviriljazi/ogit/
-cd ogit
+wget https://raw.githubusercontent.com/elviriljazi/ogit/main/ogit
 sh ogit -install
 ```
 ## Manual
